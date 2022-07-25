@@ -41,13 +41,13 @@ public class ApplicationConfiguration extends WebSecurityConfigurerAdapter {
 	  				.permitAll();
         
         httpSecurity.authorizeRequests()
-        .antMatchers(HttpMethod.GET,"/api/students/**")
+        .antMatchers(HttpMethod.GET,"/api/employees/**")
         .hasAnyRole("USER", "ADMIN")
         .and()
         .authorizeRequests()
-        .antMatchers(HttpMethod.POST,"/api/students/**")
+        .antMatchers(HttpMethod.POST,"/api/employees/**")
         .hasRole("ADMIN")
-        .antMatchers(HttpMethod.DELETE,"/api/students/**")
+        .antMatchers(HttpMethod.DELETE,"/api/employees/**")
         .hasRole("ADMIN")
         .anyRequest()
         .authenticated()
